@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LicenseStore — Venta de Licencias de Software</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="#" class="brand-logo">License<span>Store</span></a>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <a href="#featured">Destacados</a>
+                <a href="#offers">Ofertas</a>
+                <a href="#latest">Últimas versiones</a>
+                <a href="#all-licenses">Catálogo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h1>Licencias de software originales al mejor precio</h1>
+            <p>Activación inmediata, versiones verificadas y las mejores ofertas en sistemas operativos, diseño y desarrollo.</p>
+        </section>
+
+        <section id="featured" class="catalog-section">
+            <div class="section-header">
+                <h2>Destacados</h2>
+                <p>Selección principal recomendada</p>
+            </div>
+            <div id="featured-container" class="licenses-grid"></div>
+        </section>
+
+        <section id="offers" class="catalog-section">
+            <div class="section-header">
+                <h2>Mejores ofertas</h2>
+                <p>Ordenadas por mayor porcentaje de descuento</p>
+            </div>
+            <div id="offers-container" class="licenses-grid"></div>
+        </section>
+
+        <section id="latest" class="catalog-section">
+            <div class="section-header">
+                <h2>Últimas versiones</h2>
+                <p>La edición más reciente disponible de cada software</p>
+            </div>
+            <div id="latest-container" class="licenses-grid"></div>
+        </section>
+
+        <section id="all-licenses" class="catalog-section">
+            <div class="section-header">
+                <h2>Todas las licencias</h2>
+                <p>Explora el catálogo completo en orden aleatorio</p>
+            </div>
+
+            <div class="filters-bar" role="region" aria-label="Filtros del catálogo">
+                <input
+                    type="search"
+                    id="filter-search"
+                    class="filter-input"
+                    placeholder="Buscar por nombre de software..."
+                    aria-label="Buscar por nombre de software"
+                >
+                <select id="filter-category" class="filter-select" aria-label="Filtrar por categoría">
+                    <option value="all">Todas las categorías</option>
+                    <option value="Sistemas Operativos">Sistemas Operativos</option>
+                    <option value="Ofimática">Ofimática</option>
+                    <option value="Diseño y Edición">Diseño y Edición</option>
+                    <option value="Ingeniería y 3D">Ingeniería y 3D</option>
+                    <option value="Seguridad">Seguridad</option>
+                    <option value="Desarrollo">Desarrollo</option>
+                    <option value="Utilidades">Utilidades</option>
+                </select>
+                <select id="filter-discount" class="filter-select" aria-label="Filtrar por oferta">
+                    <option value="all">Cualquier precio</option>
+                    <option value="discounted">Solo con descuento</option>
+                    <option value="featured">Solo destacados</option>
+                </select>
+                <button type="button" id="filter-reset" class="btn-secondary">Limpiar</button>
+            </div>
+
+            <div id="all-container" class="licenses-grid"></div>
+        </section>
+    </main>
+
+    <div id="license-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-card">
+            <button type="button" id="modal-close" class="modal-close" aria-label="Cerrar ventana">&times;</button>
+            <span class="modal-badge">Compra completada</span>
+            <h3 id="modal-title">Tu clave de activación</h3>
+            <p id="modal-software" class="modal-software"></p>
+            <div class="modal-key-box">
+                <code id="modal-key"></code>
+                <button type="button" id="modal-copy" class="btn-copy">Copiar</button>
+            </div>
+            <p class="modal-note">Guarda esta clave en un lugar seguro para activar tu software.</p>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>LicenseStore — Proyecto web de licencias de software.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./scripts/app.js"></script>
+</body>
+</html>
